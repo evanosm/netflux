@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflux</title>
+
+    <!-- link css -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- google fonts import -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+    <!-- font awesome import -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <img src="./media/main-logo.png" alt="logo" class="loading-logo" id="logo">
+
+    <div class="loading-screen" id="loading">
+        
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+
+    <div class="main-page" id="app">
+        
+        <div class="header">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+        <div class="landing-full-art" id="landing">
+            <div class="landing-serie-details">
+                <h1 class="landing-serie-title">{{ landing.title }}</h1>
+                <p class="landing-reco">Note : {{ landing.reco }}/10 ⭐ ! | Date de sortie : {{landing.releaseDate}}  </p>
+                <p class="landing-serie-desc">{{ landing.desc }}</p>
+            </div>
+
+            <div class="landing-buttons">       
+                <button class="landing-watch">REGARDER</button>
+                <button class="landing-add-favorites">AJOUTER AUX FAVORIS</button>
+            </div>
+
+            <img class="landing-image" v-bind:src="landing.img" alt="serie cover">
+            <div class="landing-gradient-overlay"></div>
+        </div>
+        
+        <div class="sub-content" id="topMovieSlider">
+            <h1 class="sub-categorie-title">Top 5 Movies :</h1>
+            <div class="sub-result-wrapper">
+                <div v-for="movies in topMovies" class="sub-result-item">
+                    <h1 class="sub-result-title">{{movies.title}}</h1>
+                    <h1 class="sub-result-title">{{movies.vote_average}} / 10 ⭐</h1>
+                    <img v-bind:src="'https://image.tmdb.org/t/p/original'+movies.poster_path" alt="">
+                </div>
+            </div>
+
+            <h1 class="sub-categorie-title">Top 5 Series :</h1>
+            <div class="sub-result-wrapper">
+                <div v-for="series in topSeries" class="sub-result-item">
+                    <h1 class="sub-result-title">{{series.name}}</h1>
+                    <h1 class="sub-result-title">{{series.vote_average}} / 10 ⭐</h1>
+                    <img v-bind:src="'https://image.tmdb.org/t/p/original'+series.poster_path" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
