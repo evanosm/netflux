@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.loading-screen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1C1E16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition:all 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.loading-logo {
+    top: calc(50% - 2vh);
+    left: 50% ;
+    transform: translate(-50%, -50%) scale(.3);
+    position: absolute;
+    z-index: 11;
+}
+
+#logo {
+    transition: all 1s ease-in-out;
+}
+
+
+.lds-ellipsis {
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top : calc(50% + 2vh);
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #5FDD9D;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.4s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.4s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.4s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.4s infinite;
+  }
+
+
+.main-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1C1E16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.main-page .landing-full-art {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 75vh;
+    background: white;
+    overflow: hidden;
+}
+
+.main-page .header {
+    height: 10vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(0deg, rgba(28,30,22,0) 0%, rgba(28,30,22,1) 90%);
+    z-index: 5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.main-page .header .fa-star {
+    font-size: 1.5em;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    margin-right: 10vh;
+    transition: color 0.3s ease-in-out;
+}
+
+.main-page .header .fa-magnifying-glass {
+    font-size: 1.5em;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    margin-right: 10vh;
+    transition: color 0.3s ease-in-out;
+}
+
+.main-page .landing-full-art .landing-image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+.main-page .landing-full-art .landing-gradient-overlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 75vh;
+    background: linear-gradient(180deg, rgba(28,30,22,.5) 0%, rgba(28,30,22,1) 70%);
+}
+
+/* STYLE LANDING DETAILS */
+
+.main-page .landing-full-art .landing-serie-details {
+    width: 45vw;
+    height: 40vh;
+    position: absolute;
+    top: 15vh;
+    color: white;
+    left: 10vh;
+    z-index: 2;
+    font-family: 'Kanit', sans-serif;
+    align-items: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+
+}
+
+.main-page .landing-full-art .landing-serie-details .landing-serie-title {
+    font-weight: 700;
+    letter-spacing: 5px;
+    font-size: 2.5em;
+    line-height: 50px;
+}
+
+.main-page .landing-full-art .landing-serie-details .landing-reco {
+    font-weight: 100;
+    padding-left: 5%;
+    letter-spacing: 5px;
+}
+
+.main-page .landing-full-art .landing-serie-details .landing-serie-desc {
+    font-weight: 400;
+    text-align: justify;
+}
+
+.main-page .landing-full-art .landing-buttons {
+    position: absolute;
+    bottom: 10vh;
+    width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.main-page .landing-full-art .landing-buttons .landing-watch {
+/* material button */
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #5FDD9D;
+    border: 2px solid #5FDD9D;
+    color:#1C1E16;
+    text-align: center;
+    font-size: 1em;
+    padding: 1vh;
+    width: 40%;
+    cursor: pointer;
+    box-shadow: 5px 5px 18px 0px rgba(0,0,0,0.75);
+}
+
+.main-page .landing-full-art .landing-buttons .landing-add-favorites {
+    /* material button */
+    display: inline-block;
+    border-radius: 4px;
+    background: none;
+    border: 2px solid #5FDD9D;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    padding: 1vh;
+    width: 40%;
+    cursor: pointer;
+    box-shadow: 5px 5px 18px 0px rgba(0,0,0,0.75);
+}
+
+.main-page .landing-full-art .landing-buttons button {
+    transition: all .2s ease-in-out;
+}
+
+.main-page .landing-full-art .landing-buttons button:hover {
+    transform: scale(1.05);
+    background-color: black;
+    border: white 2px solid;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.main-page .landing-full-art .landing-buttons button:active {
+    transform: scale(.95);
+    color: #5FDD9D;
+    border-color: #5FDD9D;
+    background-color: #1C1E16;
+}
+
+.main-page .sub-content {
+    width : 100vw;
+    height: 30vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: left;
+}
+
+.main-page .sub-content .sub-categorie-title {
+    color: white;
+    height: 5vh;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 100;
+    font-size: 1.7em;
+    margin-left: 5vh;
+}
+
+.main-page .sub-content .sub-result-wrapper {
+    width: auto;
+    height: 20vh;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.main-page .sub-content .sub-result-wrapper .sub-result-item {
+    width: 15vw ;
+    height: 90%;
+    overflow: hidden;
+    background-color: black;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 5px 5px 18px 0px rgba(0,0,0,0.75);
+    float: left;
+    white-space: nowrap;
+}
+
+.main-page .sub-content .sub-result-wrapper .sub-result-item h1 {
+   color: white;
+   font-size: 1.2em;
+   font-family: 'Kanit', sans-serif;
+   font-weight: 400;
+   text-align: center;
+   line-height: 5vh;
+   position: static;
+   z-index: 10;
+}
+
+.main-page .sub-content .sub-result-wrapper .sub-result-item img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: grayscale(100%) blur(3px) opacity(.5);    
+    transition: all .2s ease-in-out;
+    aspect-ratio: 16 9;
+}
+
+.main-page .sub-content .sub-result-wrapper .sub-result-item img:hover {
+    filter: grayscale(0%) blur(3px) opacity(.5);
+}
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+}
+  
